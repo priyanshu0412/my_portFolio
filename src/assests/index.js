@@ -1,0 +1,1 @@
+export { default as ProjectImg } from "./Project_img.jpg"

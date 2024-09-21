@@ -1,6 +1,6 @@
 import React from 'react'
 import "./globals.css"
-import { HeroSection, MobileNavbar } from '@/components'
+import { HeroSection, MobileNavbar, ProjectSection } from '@/components'
 
 // ---------------------------------
 
@@ -10,6 +10,7 @@ const Home = () => {
       <div className='w-full h-screen animate-moveShadow'>
         <MobileNavbar />
         <HeroSection />
+        <ProjectSection />
       </div>
     </>
   )
