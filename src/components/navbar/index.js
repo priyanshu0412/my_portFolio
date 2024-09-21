@@ -29,7 +29,7 @@ const Navbar = () => {
                 }
             </div>
             <div className='flex items-center justify-center'>
-                <button className='text-[#000] bg-[#b2b3b3] px-6 py-2 rounded-full'>
+                <button className='text-[#000] bg-[#b2b3b3] px-6 py-2 rounded-full hover:bg-[#ffffffc0]'>
                     Get In Touch
                 </button>
             </div >

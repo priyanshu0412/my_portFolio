@@ -13,7 +13,6 @@ const MobileNavbar = () => {
     const toggleMenu = () => {
         setIsMenuOpen(prev => !prev);
     };
-    console.log("isMenuOpen", isMenuOpen)
 
     return (
         <>
@@ -34,7 +33,7 @@ const MobileNavbar = () => {
             </div>
             {
                 isMenuOpen && (
-                    <div className='z-10 flex flex-col items-center justify-center p-4 gap-y-6'>
+                    <div className='z-10 flex flex-col items-center justify-start py-8 px-4 gap-y-6 lg:hidden fixed top-[64px] w-full bg-black h-full'>
 
                         {
                             navbar.map((ele, index) => {

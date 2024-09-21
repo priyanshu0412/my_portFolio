@@ -20,7 +20,9 @@ body {
     background: linear-gradient(-45deg, #000000, #2e2528, #000000, #59857a);
     background-size: 400% 400%;
     animation: gradient 90s ease infinite;
-    height: 100vh;
+    min-height: 100vh;
+    background-attachment: fixed;
+    margin: 0;
 }
 
 @keyframes gradient {
