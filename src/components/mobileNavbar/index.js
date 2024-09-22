@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import Icon from '../icon';
 import { Navbar_data } from '../../../data';
+import { Fade } from 'react-awesome-reveal';
 
 // ------------------------------------
 
@@ -33,20 +34,23 @@ const MobileNavbar = () => {
             </div>
             {
                 isMenuOpen && (
-                    <div className='z-10 flex flex-col items-center justify-start py-8 px-4 gap-y-6 lg:hidden fixed top-[64px] w-full bg-black h-full'>
-
-                        {
-                            navbar.map((ele, index) => {
-                                return (
-                                    <p
-                                        className="text-[#d9d9d9] font-normal font-poppins cursor-pointer" key={index}
-                                    >
-                                        {ele.name}
-                                    </p>
-                                )
-                            })
-                        }
-                        <button className='text-[#000] bg-[#b2b3b3] px-6 py-2 rounded-full'>Get In Touch</button>
+                    <div className='z-10 flex flex-col items-center justify-start py-8 px-4 gap-y-8 lg:hidden fixed top-[64px] w-full bg-black h-full'>
+                        <Fade direction='left' triggerOnce={true}>
+                            {
+                                navbar.map((ele, index) => {
+                                    return (
+                                        <p
+                                            className="text-lg text-[#d9d9d9] font-semibold font-poppins cursor-pointer" key={index}
+                                        >
+                                            {ele.name}
+                                        </p>
+                                    )
+                                })
+                            }
+                        </Fade>
+                        <Fade direction='up' triggerOnce={true}>
+                            <button className='text-[#000] bg-[#b2b3b3] px-6 py-2 rounded-full'>Get In Touch</button>
+                        </Fade>
                     </div>
                 )
             }

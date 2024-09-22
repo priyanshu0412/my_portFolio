@@ -1,6 +1,6 @@
 import React from 'react'
 import "./globals.css"
-import { HeroSection, MobileNavbar, ProjectSection } from '@/components'
+import { AboutMeSection, HeroSection, MobileNavbar, ProjectSection, SkillsSection } from '@/components'
 
 // ---------------------------------
 
@@ -11,6 +11,8 @@ const Home = () => {
         <MobileNavbar />
         <HeroSection />
         <ProjectSection />
+        {/* <AboutMeSection /> */}
+        <SkillsSection />
       </div>
     </>
   )
