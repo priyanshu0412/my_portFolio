@@ -11,7 +11,7 @@ export const Navbar_data = [
         name: "About"
     },
     {
-        name: "Service"
+        name: "Skills"
     },
     {
         name: "Blog"
@@ -51,4 +51,74 @@ export const ProjectData = [
         projectDesc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Minus exercitationem cumque iure ullam ipsum est eum quam libero eos nostrum.",
         projectLink: "https://www.google.com/"
     },
+]
+
+export const SkillsSectionData = [
+    {
+        name: "FrontEnd",
+        data: [
+            {
+                skillName: "HTML",
+                iconName: "skill-icons:html",
+            },
+            {
+                skillName: "CSS",
+                iconName: "skill-icons:css",
+            },
+            {
+                skillName: "Javascript",
+                iconName: "skill-icons:javascript",
+            },
+            {
+                skillName: "React",
+                iconName: "vscode-icons:file-type-reactjs",
+            },
+            {
+                skillName: "Redux",
+                iconName: "skill-icons:redux",
+            },
+            {
+                skillName: "Next",
+                iconName: "logos:nextjs",
+            },
+            {
+                skillName: "Tailwind",
+                iconName: "devicon:tailwindcss",
+            },
+            {
+                skillName: "Bootstrap",
+                iconName: "skill-icons:bootstrap",
+            },
+        ]
+    },
+    {
+        name: "BackEnd",
+        data: [
+            {
+                skillName: "Node Js",
+                iconName: "skill-icons:nodejs-dark",
+            },
+            {
+                skillName: "Express Js",
+                iconName: "skill-icons:expressjs-light",
+            },
+            {
+                skillName: "MongoDB",
+                iconName: "devicon:mongodb",
+            },
+            {
+                skillName: "Strapi",
+                iconName: "logos:strapi-icon",
+            }
+        ]
+    },
+    {
+        name: "Version Control",
+        data: [
+            {
+                skillName: "GitHub",
+                iconName: "devicon:github"
+            }
+        ]
+    }
 ]
