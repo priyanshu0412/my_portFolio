@@ -35,7 +35,7 @@ const MobileNavbar = () => {
             {
                 isMenuOpen && (
                     <div className='z-10 flex flex-col items-center justify-start py-8 px-4 gap-y-8 lg:hidden fixed top-[64px] w-full bg-black h-full'>
-                        <Fade direction='left' triggerOnce={true}>
+                        <Fade duration={1000} direction='left' triggerOnce={true}>
                             {
                                 navbar.map((ele, index) => {
                                     return (
@@ -48,7 +48,7 @@ const MobileNavbar = () => {
                                 })
                             }
                         </Fade>
-                        <Fade direction='up' triggerOnce={true}>
+                        <Fade duration={1000} direction='up' triggerOnce={true}>
                             <button className='text-[#000] bg-[#b2b3b3] px-6 py-2 rounded-full'>Get In Touch</button>
                         </Fade>
                     </div>

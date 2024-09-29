@@ -7,9 +7,9 @@ import { Fade } from 'react-awesome-reveal'
 
 const SkillSectionCard = ({ data }) => {
     return (
-        <Fade direction='up' triggerOnce={true}>
+        <Fade duration={1000} direction='up' triggerOnce={true}>
             <div className='flex flex-col items-center w-full py-12 lg:flex-row gap-y-8 lg:gap-y-0 '>
-                <Fade direction='up' triggerOnce={true}>
+                <Fade duration={1000} direction='up' triggerOnce={true}>
                     <div className='w-full lg:w-[500px] h-full lg:pl-12'>
                         <p className='text-2xl font-bold tracking-wider font-poppins'>{data.name}</p>
                     </div>
@@ -27,7 +27,7 @@ const SkillSectionCard = ({ data }) => {
                     </div>
                 </Fade>
             </div>
-            <Fade direction='up' triggerOnce={true}>
+            <Fade duration={1000} direction='up' triggerOnce={true}>
                 <span className='h-[0.5px] block bg-[#b2b3b3] w-full' ></span>
             </Fade>
         </Fade>
