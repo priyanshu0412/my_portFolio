@@ -122,3 +122,30 @@ export const SkillsSectionData = [
         ]
     }
 ]
+
+export const AboutMeSectionData = [
+    {
+        socialLink: [
+            {
+                icon: "fe:instagram",
+                link: "www.google.com"
+            },
+            {
+                icon: "ic:baseline-facebook",
+                link: "www.google.com"
+            },
+            {
+                icon: "pajamas:twitter",
+                link: "www.google.com"
+            },
+            {
+                icon: "mdi:linkedin",
+                link: "www.google.com"
+            },
+            {
+                icon: "mdi:github",
+                link: "www.google.com"
+            }
+        ]
+    }
+]
