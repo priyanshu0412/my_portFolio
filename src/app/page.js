@@ -7,7 +7,6 @@ import { AboutMeSection, HeroSection, MobileNavbar, ProjectSection, SkillsSectio
 const Home = () => {
   return (
     <>
-      <MobileNavbar />
       <HeroSection />
       <ProjectSection />
       <AboutMeSection />

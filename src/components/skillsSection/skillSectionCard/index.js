@@ -18,7 +18,7 @@ const SkillSectionCard = ({ data }) => {
                             data?.data?.map((ele, index) => {
                                 return (
                                     <div key={index} className='cursor-pointer justify-center items-center w-fit rounded-xl border-2 border-[#b2b3b3] p-2 flex gap-x-4'>
-                                        <Icon icon={ele?.iconName} width={30} height={30} />
+                                        <Icon icon={ele?.iconName} width={30} height={30} className='text-white' />
                                         <p className='font-poppins'>{ele?.skillName}</p>
                                     </div>
                                 )
