@@ -1,4 +1,4 @@
-import { Navbar } from "@/components";
+import { Footer, Navbar } from "@/components";
 import "./globals.css";
 
 export const metadata = {
@@ -9,9 +9,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body id='style-2'>
+      <body className="w-full h-screen animate-moveShadow">
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

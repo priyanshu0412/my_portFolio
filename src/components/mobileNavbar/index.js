@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Icon from '../icon';
 import { Navbar_data } from '../../../data';
 import { Fade } from 'react-awesome-reveal';
+import Link from 'next/link';
 
 // ------------------------------------
 
@@ -13,6 +14,10 @@ const MobileNavbar = () => {
 
     const toggleMenu = () => {
         setIsMenuOpen(prev => !prev);
+    };
+
+    const handleLinkClick = () => {
+        setIsMenuOpen(false);
     };
 
     return (
@@ -35,15 +40,17 @@ const MobileNavbar = () => {
             {
                 isMenuOpen && (
                     <div className='z-10 flex flex-col items-center justify-start py-8 px-4 gap-y-8 lg:hidden fixed top-[64px] w-full bg-black h-full'>
-                        <Fade duration={1000} direction='left' triggerOnce={true}>
+                        <Fade duration={1000} direction='up' triggerOnce={true}>
                             {
                                 navbar.map((ele, index) => {
                                     return (
-                                        <p
-                                            className="text-lg text-[#d9d9d9] font-semibold font-poppins cursor-pointer" key={index}
-                                        >
-                                            {ele.name}
-                                        </p>
+                                        <Link key={index} className='w-fit' href={`#${ele.name}`} onClick={handleLinkClick}>
+                                            <p
+                                                className="text-lg text-[#d9d9d9] font-semibold font-poppins cursor-pointer"
+                                            >
+                                                {ele.name}
+                                            </p>
+                                        </Link>
                                     )
                                 })
                             }

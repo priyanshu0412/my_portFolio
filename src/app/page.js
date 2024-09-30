@@ -7,13 +7,11 @@ import { AboutMeSection, HeroSection, MobileNavbar, ProjectSection, SkillsSectio
 const Home = () => {
   return (
     <>
-      <div className='w-full h-screen animate-moveShadow' >
-        <MobileNavbar />
-        <HeroSection />
-        <ProjectSection />
-        <AboutMeSection />
-        <SkillsSection />
-      </div>
+      <MobileNavbar />
+      <HeroSection />
+      <ProjectSection />
+      <AboutMeSection />
+      <SkillsSection />
     </>
   )
 }

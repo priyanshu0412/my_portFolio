@@ -1,6 +1,7 @@
 "use client"
 import React, { Fragment, useState } from 'react'
 import { Navbar_data } from '../../../data'
+import Link from 'next/link'
 
 // ---------------------------------
 
@@ -19,11 +20,12 @@ const Navbar = () => {
                 {
                     navbar.map((ele, index) => {
                         return (
-                            <p
-                                className="text-[#d9d9d9] font-normal font-poppins cursor-pointer" key={index}
-                            >
-                                {ele.name}
-                            </p>
+                            <Link href={`#${ele.name}`} key={index} className='w-fit'>
+                                <p
+                                    className="text-[#d9d9d9] font-normal font-poppins cursor-pointer">
+                                    {ele.name}
+                                </p>
+                            </Link>
                         )
                     })
                 }
