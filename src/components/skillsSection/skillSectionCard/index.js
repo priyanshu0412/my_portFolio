@@ -27,9 +27,6 @@ const SkillSectionCard = ({ data }) => {
                     </div>
                 </Fade>
             </div>
-            <Fade duration={1000} direction='up' triggerOnce={true}>
-                <span className='h-[0.5px] block bg-[#b2b3b3] w-full' ></span>
-            </Fade>
         </Fade>
     )
 }

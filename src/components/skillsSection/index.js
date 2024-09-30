@@ -11,7 +11,7 @@ const SkillsSection = () => {
     const [skillData, setskillData] = useState(SkillsSectionData)
 
     return (
-        <div className='flex items-center justify-center w-full py-20 text-white'>
+        <div id='Skills' className='flex items-center justify-center w-full py-20 text-white'>
             <div className='max-w-[1400px] flex justify-center px-8 flex-col items-center gap-y-8 w-full'>
                 <div className='w-full lg:w-[50%] flex justify-center flex-col items-center gap-y-8'>
                     <Fade duration={1000} direction='up' triggerOnce={true}>

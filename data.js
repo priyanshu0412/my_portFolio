@@ -14,7 +14,7 @@ export const Navbar_data = [
         name: "Skills"
     },
     {
-        name: "Blog"
+        name: "Project"
     },
 ]
 
@@ -128,22 +128,27 @@ export const AboutMeSectionData = [
         socialLink: [
             {
                 icon: "fe:instagram",
+                name: "Instagram",
                 link: "www.google.com"
             },
             {
                 icon: "ic:baseline-facebook",
+                name: "Facebook",
                 link: "www.google.com"
             },
             {
                 icon: "pajamas:twitter",
+                name: "X",
                 link: "www.google.com"
             },
             {
                 icon: "mdi:linkedin",
+                name: "linkedIn",
                 link: "www.google.com"
             },
             {
                 icon: "mdi:github",
+                name: "Github",
                 link: "www.google.com"
             }
         ]
