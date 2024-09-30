@@ -1,5 +1,5 @@
 "use client"
-import { img } from '@/assests'
+import { img } from '@/assets'
 import Image from 'next/image'
 import React, { useState } from 'react'
 import { Fade } from "react-awesome-reveal";
@@ -11,7 +11,6 @@ import { AboutMeSectionData } from '../../../data';
 const AboutMeSection = () => {
 
     const [socialLinkData, setSocialLinkData] = useState(AboutMeSectionData)
-    console.log(socialLinkData[0].socialLink)
 
     return (
         <div className='flex items-center justify-center w-full py-20' id='About'>

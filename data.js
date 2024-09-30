@@ -1,4 +1,4 @@
-import { ProjectImg } from "@/assests"
+import { ProjectImg } from "@/assets"
 
 export const Navbar_data = [
     {
@@ -79,7 +79,7 @@ export const SkillsSectionData = [
             },
             {
                 skillName: "Next",
-                iconName: "logos:nextjs",
+                iconName: "skill-icons:nextjs-dark",
             },
             {
                 skillName: "Tailwind",
@@ -117,7 +117,7 @@ export const SkillsSectionData = [
         data: [
             {
                 skillName: "GitHub",
-                iconName: "devicon:github"
+                iconName: "fa6-brands:square-github"
             }
         ]
     }

@@ -27,9 +27,9 @@ const HeroSection = () => {
                             )
                         })
                     }
-                    <div className='flex items-center w-full justify-evenly lg:justify-center lg:gap-x-8'>
-                        <button className='text-[#000] bg-[#b2b3b3] px-4 py-4 lg:px-6 lg:py-3 rounded-full hover:bg-[#ffffffc0]'>Download Resume</button>
-                        <button className='border-2 border-[#b2b3b3] text-[#b2b3b3]  py-4 px-4 lg:px-6 lg:py-3  rounded-full'>Contact</button>
+                    <div className='flex items-center w-full gap-x-2 justify-evenly lg:justify-center lg:gap-x-8'>
+                        <button className='text-[#000] bg-[#b2b3b3] px-4 py-3 lg:px-6 lg:py-3 rounded-full hover:bg-[#ffffffc0]'>Download Resume</button>
+                        <button className='border-2 border-[#b2b3b3] text-[#b2b3b3]  py-3 px-4 lg:px-6 lg:py-3  rounded-full'>Contact</button>
                     </div>
                 </div>
             </Fade >
