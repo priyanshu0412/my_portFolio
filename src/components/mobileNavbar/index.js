@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Icon from '../icon';
 import { Navbar_data } from '../../../data';
 import { Fade } from 'react-awesome-reveal';
@@ -19,6 +19,19 @@ const MobileNavbar = () => {
     const handleLinkClick = () => {
         setIsMenuOpen(false);
     };
+
+    useEffect(() => {
+        if (isMenuOpen) {
+            document.body.classList.add('overflow-hidden');
+        } else {
+            document.body.classList.remove('overflow-hidden');
+        }
+
+        // Cleanup on unmount
+        return () => {
+            document.body.classList.remove('overflow-hidden');
+        };
+    }, [isMenuOpen]);
 
     return (
         <>

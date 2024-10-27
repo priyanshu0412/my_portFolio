@@ -21,13 +21,18 @@ const ProjectSection = () => {
                         <div className='flex flex-col w-full pt-12 lg:justify-center lg:flex-row lg:flex-wrap lg:gap-x-14 2xl:gap-x-28 gap-y-16'>
                             {
                                 data && data.map((ele, index) => {
-                                    return (
-                                        <div key={index} >
-                                            <ProjectCard data={ele} />
-                                        </div>
-                                    )
+                                    if (index < 4) {
+                                        return (
+                                            <div key={index}>
+                                                <ProjectCard data={ele} />
+                                            </div>
+                                        );
+                                    } else {
+                                        return null;
+                                    }
                                 })
                             }
+
                         </div>
                         <Fade triggerOnce={true} duration={1000} direction='up' className='w-full'>
                             <div className='flex items-center justify-center w-full pt-12 '>

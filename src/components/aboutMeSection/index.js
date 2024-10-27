@@ -24,7 +24,7 @@ const AboutMeSection = () => {
                         </div>
                         <div>
                             <p className='font-extrabold tracking-wider text-transparent uppercase lg:text-xl font-poppins bg-gradient-to-r from-fuchsia-600 to-pink-600 bg-clip-text'>
-                                Priyanshu Agrawal - Full Stack Developer
+                                Priyanshu Agrawal - MERN Stack Developer
                             </p>
                         </div>
                         <div>
