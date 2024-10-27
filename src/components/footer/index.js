@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 import { AboutMeSectionData } from '../../../data'
 import { Icon } from '@iconify/react'
+import Link from 'next/link'
 
 // ----------------------------------------------
 
@@ -31,8 +32,12 @@ const Footer = () => {
                                 </button>
                             </div>
                             <div className='flex w-full pt-12 gap-x-8 lg:w-fit justify-evenly'>
-                                <p className='text-[#b2b3b3] underline cursor-pointer font-poppins'>Privacy Policy</p>
-                                <p className='text-[#b2b3b3] underline cursor-pointer font-poppins'>Terms of Service</p>
+                                <Link href={"/privacy-policy"} className="w-fit">
+                                    <p className='text-[#b2b3b3] underline cursor-pointer font-poppins'>Privacy Policy</p>
+                                </Link>
+                                <Link href={"/terms-of-service"} className="w-fit">
+                                    <p className='text-[#b2b3b3] underline cursor-pointer font-poppins'>Terms of Service</p>
+                                </Link>
                             </div>
                         </div>
                         <div className='flex justify-around w-full pt-16 lg:pt-0 lg:justify-evenly'>

@@ -24,9 +24,9 @@ const Navbar = () => {
                     {
                         navbar.map((ele, index) => {
                             return (
-                                <Link href={ele.name === "Home" || ele.name === "Portfolio" ? "/" : `/#${ele.name}`} key={index} className='w-fit'>
+                                <Link href={ele.name === "Home" ? "/" : `/#${ele.name}`} key={index} className='w-fit'>
                                     <p
-                                        className="text-[#d9d9d9] font-normal font-poppins cursor-pointer">
+                                        className="text-[#d9d9d9] hover:text-white font-normal font-poppins cursor-pointer">
                                         {ele.name}
                                     </p>
                                 </Link>
