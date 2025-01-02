@@ -43,10 +43,18 @@ const Footer = () => {
                         <div className='flex justify-around w-full pt-16 lg:pt-0 lg:justify-evenly'>
                             <div className='flex flex-col w-fit gap-y-8 [&>p]:font-poppins'>
                                 <p className='font-extrabold text-white'>Pages</p>
-                                <p className='text-[#b2b3b3]'>Home</p>
-                                <p className='text-[#b2b3b3]'>Contact</p>
-                                <p className='text-[#b2b3b3]'>Login</p>
-                                <p className='text-[#b2b3b3]'>Signup</p>
+                                <Link href={"/"}>
+                                    <p className='text-[#b2b3b3]'>Home</p>
+                                </Link>
+                                <Link href={"/contact"}>
+                                    <p className='text-[#b2b3b3]'>Contact</p>
+                                </Link>
+                                <Link href={"/login"}>
+                                    <p className='text-[#b2b3b3]'>Login</p>
+                                </Link>
+                                <Link href={"/sign-up"}>
+                                    <p className='text-[#b2b3b3]'>Sign Up</p>
+                                </Link>
                             </div>
                             <div className='flex flex-col w-fit gap-y-8 '>
                                 <div>

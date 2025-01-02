@@ -1,12 +1,13 @@
 "use client"
-import React, { useState } from 'react'
-import ProjectCard from './projectCard'
-import { ProjectData } from '../../../data'
-import { Fade } from "react-awesome-reveal";
 import Link from 'next/link';
-// -----------------------------------------------
+import React, { useState } from 'react'
+import { Fade } from 'react-awesome-reveal';
+import { ProjectData } from '../../../data';
+import ProjectCard from '../projectSection/projectCard';
 
-const ProjectSection = () => {
+// ---------------------------------
+
+const AllProjectPageComp = () => {
 
     const [data, setData] = useState(ProjectData)
 
@@ -22,26 +23,15 @@ const ProjectSection = () => {
                         <div className='flex flex-col w-full pt-12 lg:justify-center lg:flex-row lg:flex-wrap lg:gap-x-14 2xl:gap-x-28 gap-y-16'>
                             {
                                 data && data.map((ele, index) => {
-                                    if (index < 4) {
-                                        return (
-                                            <div key={index}>
-                                                <ProjectCard data={ele} />
-                                            </div>
-                                        );
-                                    } else {
-                                        return null;
-                                    }
+                                    return (
+                                        <div key={index}>
+                                            <ProjectCard data={ele} />
+                                        </div>
+                                    );
                                 })
                             }
 
                         </div>
-                        <Fade triggerOnce={true} duration={1000} direction='up' className='w-full'>
-                            <div className='flex items-center justify-center w-full pt-12 '>
-                                <Link className='w-fit' href={"/all-projects"}>
-                                    <button className='border-2 border-[#b2b3b3] text-[#b2b3b3] px-6 py-3 rounded-full hover:text-white'>View All</button>
-                                </Link>
-                            </div>
-                        </Fade>
                     </div>
                 </Fade>
             </div >
@@ -49,4 +39,5 @@ const ProjectSection = () => {
     )
 }
 
-export default ProjectSection
+
+export default AllProjectPageComp

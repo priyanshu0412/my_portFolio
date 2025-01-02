@@ -1,6 +1,7 @@
 "use client"
 import Icon from '@/components/icon'
 import Image from 'next/image'
+import Link from 'next/link';
 import React from 'react'
 import { Fade } from "react-awesome-reveal";
 
@@ -19,9 +20,11 @@ const ProjectCard = ({ data }) => {
                     <p className='font-poppins text-[#B2B3B3]'>{data?.projectDesc}</p>
                 </div>
                 <div>
-                    <button className='flex items-center justify-center text-[#B2B3B3] font-poppins gap-x-2 hover:underline'>
-                        View Project <Icon icon={"ph:arrow-up-right-light"} height={20} width={20} />
-                    </button>
+                    <Link href={`/project/${data.url}`}>
+                        <button className='flex items-center justify-center text-[#B2B3B3] font-poppins gap-x-2 hover:underline'>
+                            View Project <Icon icon={"ph:arrow-up-right-light"} height={20} width={20} />
+                        </button>
+                    </Link>
                 </div>
             </div>
         </Fade>

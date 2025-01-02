@@ -10,7 +10,7 @@ const HeroSection = () => {
     const [data, setData] = useState(HeroSectionData)
 
     return (
-        <div className='flex items-center justify-center py-20'>
+        <div className='flex items-center justify-center w-full py-20'>
             <Fade duration={1000} direction='up' triggerOnce={true} >
                 <div className='w-full max-w-[1200px] flex flex-col justify-center items-center gap-y-8 px-8'>
                     {
