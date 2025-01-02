@@ -26,38 +26,59 @@ export const HeroSectionData = [
 
 export const ProjectData = [
     {
+        url: "/project1",
         projectImg: ProjectImg,
         projectTitle: "Project 1",
         projectDesc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Minus exercitationem cumque iure ullam ipsum est eum quam libero eos nostrum.",
-        projectLink: "https://www.google.com/"
+        projectLink: "https://www.google.com/",
+        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae unde explicabo voluptatum eos, corporis neque libero deleniti saepe ab aliquam.",
+        techStack: [
+            {
+                name: "React JS",
+                icon: "mdi:react"
+            },
+            {
+                name: "Next JS",
+                icon: "ri:nextjs-fill"
+            },
+            {
+                name: "Tailwind",
+                icon: "mdi:tailwind"
+            },
+        ]
     },
     {
+        url: "/project2",
         projectImg: ProjectImg,
         projectTitle: "Project 2",
         projectDesc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Minus exercitationem cumque iure ullam ipsum est eum quam libero eos nostrum.",
         projectLink: "https://www.google.com/"
     },
     {
+        url: "/project3",
         projectImg: ProjectImg,
         projectTitle: "Project 3",
         projectDesc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Minus exercitationem cumque iure ullam ipsum est eum quam libero eos nostrum.",
         projectLink: "https://www.google.com/"
     },
     {
+        url: "/project4",
         projectImg: ProjectImg,
         projectTitle: "Project 4",
         projectDesc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Minus exercitationem cumque iure ullam ipsum est eum quam libero eos nostrum.",
         projectLink: "https://www.google.com/"
     },
     {
+        url: "/project5",
         projectImg: ProjectImg,
-        projectTitle: "Project 4",
+        projectTitle: "Project 5",
         projectDesc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Minus exercitationem cumque iure ullam ipsum est eum quam libero eos nostrum.",
         projectLink: "https://www.google.com/"
     },
     {
+        url: "/project6",
         projectImg: ProjectImg,
-        projectTitle: "Project 4",
+        projectTitle: "Project 6",
         projectDesc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Minus exercitationem cumque iure ullam ipsum est eum quam libero eos nostrum.",
         projectLink: "https://www.google.com/"
     },
