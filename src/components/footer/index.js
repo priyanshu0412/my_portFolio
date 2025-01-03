@@ -27,7 +27,7 @@ const Footer = () => {
                             {/* Newsletter  */}
                             <div className='flex flex-col lg:flex-row gap-y-8 lg:gap-y-0 gap-x-4'>
                                 <input type="email" placeholder='Enter Email' className='font-poppins text-white p-4 bg-transparent border-2 rounded-xl w-full lg:w-80 border-[#b2b3b3]' />
-                                <button className='text-[#b2b3b3] border-[1px] border-[#b2b3b3] rounded-full px-4 py-2 font-poppins w-full lg:w-fit '>
+                                <button className='text-[#b2b3b3] border-[1px] hover:text-white hover:border-white border-[#b2b3b3] rounded-full px-4 py-2 font-poppins w-full lg:w-fit '>
                                     Subscribe
                                 </button>
                             </div>
@@ -48,12 +48,6 @@ const Footer = () => {
                                 </Link>
                                 <Link href={"/contact"}>
                                     <p className='text-[#b2b3b3]'>Contact</p>
-                                </Link>
-                                <Link href={"/login"}>
-                                    <p className='text-[#b2b3b3]'>Login</p>
-                                </Link>
-                                <Link href={"/sign-up"}>
-                                    <p className='text-[#b2b3b3]'>Sign Up</p>
                                 </Link>
                             </div>
                             <div className='flex flex-col w-fit gap-y-8 '>
