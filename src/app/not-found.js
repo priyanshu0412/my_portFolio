@@ -18,9 +18,9 @@ const NotFound = () => {
                         Sorry, we can&apos;t find that page. You&apos;ll find lots to explore on the home page.
                     </p>
                     <Link href={"/"} className='w-fit'>
-                        <p>
-                            Back to Homepage
-                        </p>
+                        <button className='text-[#000] bg-[#b2b3b3] px-6 py-2 rounded-full'>
+                            Back To Home Page
+                        </button>
                     </Link>
                 </div>
             </div>

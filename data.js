@@ -1,158 +1,158 @@
 import { ProjectImg } from "@/assets"
 
-export const Navbar_data = [
-    {
-        name: "Home"
-    },
+// export const Navbar_data = [
+//     {
+//         name: "Home"
+//     },
 
-    {
-        name: "About"
-    },
-    {
-        name: "Skills"
-    },
-    {
-        name: "Project"
-    },
-]
+//     {
+//         name: "About"
+//     },
+//     {
+//         name: "Skills"
+//     },
+//     {
+//         name: "Project"
+//     },
+// ]
 
-export const HeroSectionData = [
-    {
-        title: "More Than Just Code, It's Your ",
-        colorText: "Digital Vision",
-        desc: "As a skilled MERN stack developer, I bring ideas to life by creating dynamic, responsive, and user-centric web applications. Whether it's designing intuitive front-end interfaces or building robust back-end systems, I ensure every project is both scalable and optimized for performance. Let's transform your vision into a seamless digital experience."
-    }
-]
+// export const HeroSectionData = [
+//     {
+//         title: "More Than Just Code, It's Your ",
+//         colorText: "Digital Vision",
+//         desc: "As a skilled MERN stack developer, I bring ideas to life by creating dynamic, responsive, and user-centric web applications. Whether it's designing intuitive front-end interfaces or building robust back-end systems, I ensure every project is both scalable and optimized for performance. Let's transform your vision into a seamless digital experience."
+//     }
+// ]
 
-export const ProjectData = [
-    {
-        url: "/project1",
-        projectImg: ProjectImg,
-        projectTitle: "Project 1",
-        projectDesc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Minus exercitationem cumque iure ullam ipsum est eum quam libero eos nostrum.",
-        projectLink: "https://www.google.com/",
-        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae unde explicabo voluptatum eos, corporis neque libero deleniti saepe ab aliquam.",
-        techStack: [
-            {
-                name: "React JS",
-                icon: "mdi:react"
-            },
-            {
-                name: "Next JS",
-                icon: "ri:nextjs-fill"
-            },
-            {
-                name: "Tailwind",
-                icon: "mdi:tailwind"
-            },
-        ]
-    },
-    {
-        url: "/project2",
-        projectImg: ProjectImg,
-        projectTitle: "Project 2",
-        projectDesc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Minus exercitationem cumque iure ullam ipsum est eum quam libero eos nostrum.",
-        projectLink: "https://www.google.com/"
-    },
-    {
-        url: "/project3",
-        projectImg: ProjectImg,
-        projectTitle: "Project 3",
-        projectDesc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Minus exercitationem cumque iure ullam ipsum est eum quam libero eos nostrum.",
-        projectLink: "https://www.google.com/"
-    },
-    {
-        url: "/project4",
-        projectImg: ProjectImg,
-        projectTitle: "Project 4",
-        projectDesc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Minus exercitationem cumque iure ullam ipsum est eum quam libero eos nostrum.",
-        projectLink: "https://www.google.com/"
-    },
-    {
-        url: "/project5",
-        projectImg: ProjectImg,
-        projectTitle: "Project 5",
-        projectDesc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Minus exercitationem cumque iure ullam ipsum est eum quam libero eos nostrum.",
-        projectLink: "https://www.google.com/"
-    },
-    {
-        url: "/project6",
-        projectImg: ProjectImg,
-        projectTitle: "Project 6",
-        projectDesc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Minus exercitationem cumque iure ullam ipsum est eum quam libero eos nostrum.",
-        projectLink: "https://www.google.com/"
-    },
-]
+// export const ProjectData = [
+//     {
+//         url: "/project1",
+//         projectImg: ProjectImg,
+//         projectTitle: "Project 1",
+//         projectDesc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Minus exercitationem cumque iure ullam ipsum est eum quam libero eos nostrum.",
+//         projectLink: "https://www.google.com/",
+//         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae unde explicabo voluptatum eos, corporis neque libero deleniti saepe ab aliquam.",
+//         techStack: [
+//             {
+//                 name: "React JS",
+//                 icon: "mdi:react"
+//             },
+//             {
+//                 name: "Next JS",
+//                 icon: "ri:nextjs-fill"
+//             },
+//             {
+//                 name: "Tailwind",
+//                 icon: "mdi:tailwind"
+//             },
+//         ]
+//     },
+//     {
+//         url: "/project2",
+//         projectImg: ProjectImg,
+//         projectTitle: "Project 2",
+//         projectDesc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Minus exercitationem cumque iure ullam ipsum est eum quam libero eos nostrum.",
+//         projectLink: "https://www.google.com/"
+//     },
+//     {
+//         url: "/project3",
+//         projectImg: ProjectImg,
+//         projectTitle: "Project 3",
+//         projectDesc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Minus exercitationem cumque iure ullam ipsum est eum quam libero eos nostrum.",
+//         projectLink: "https://www.google.com/"
+//     },
+//     {
+//         url: "/project4",
+//         projectImg: ProjectImg,
+//         projectTitle: "Project 4",
+//         projectDesc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Minus exercitationem cumque iure ullam ipsum est eum quam libero eos nostrum.",
+//         projectLink: "https://www.google.com/"
+//     },
+//     {
+//         url: "/project5",
+//         projectImg: ProjectImg,
+//         projectTitle: "Project 5",
+//         projectDesc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Minus exercitationem cumque iure ullam ipsum est eum quam libero eos nostrum.",
+//         projectLink: "https://www.google.com/"
+//     },
+//     {
+//         url: "/project6",
+//         projectImg: ProjectImg,
+//         projectTitle: "Project 6",
+//         projectDesc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Minus exercitationem cumque iure ullam ipsum est eum quam libero eos nostrum.",
+//         projectLink: "https://www.google.com/"
+//     },
+// ]
 
-export const SkillsSectionData = [
-    {
-        name: "FrontEnd",
-        data: [
-            {
-                skillName: "HTML",
-                iconName: "skill-icons:html",
-            },
-            {
-                skillName: "CSS",
-                iconName: "skill-icons:css",
-            },
-            {
-                skillName: "Javascript",
-                iconName: "skill-icons:javascript",
-            },
-            {
-                skillName: "React",
-                iconName: "vscode-icons:file-type-reactjs",
-            },
-            {
-                skillName: "Redux",
-                iconName: "skill-icons:redux",
-            },
-            {
-                skillName: "Next",
-                iconName: "skill-icons:nextjs-dark",
-            },
-            {
-                skillName: "Tailwind",
-                iconName: "devicon:tailwindcss",
-            },
-            {
-                skillName: "Bootstrap",
-                iconName: "skill-icons:bootstrap",
-            },
-        ]
-    },
-    {
-        name: "BackEnd",
-        data: [
-            {
-                skillName: "Node Js",
-                iconName: "skill-icons:nodejs-dark",
-            },
-            {
-                skillName: "Express Js",
-                iconName: "skill-icons:expressjs-light",
-            },
-            {
-                skillName: "MongoDB",
-                iconName: "devicon:mongodb",
-            },
-            {
-                skillName: "Strapi",
-                iconName: "logos:strapi-icon",
-            }
-        ]
-    },
-    {
-        name: "Version Control",
-        data: [
-            {
-                skillName: "GitHub",
-                iconName: "fa6-brands:square-github"
-            }
-        ]
-    }
-]
+// export const SkillsSectionData = [
+//     {
+//         name: "FrontEnd",
+//         data: [
+//             {
+//                 skillName: "HTML",
+//                 iconName: "skill-icons:html",
+//             },
+//             {
+//                 skillName: "CSS",
+//                 iconName: "skill-icons:css",
+//             },
+//             {
+//                 skillName: "Javascript",
+//                 iconName: "skill-icons:javascript",
+//             },
+//             {
+//                 skillName: "React",
+//                 iconName: "vscode-icons:file-type-reactjs",
+//             },
+//             {
+//                 skillName: "Redux",
+//                 iconName: "skill-icons:redux",
+//             },
+//             {
+//                 skillName: "Next",
+//                 iconName: "skill-icons:nextjs-dark",
+//             },
+//             {
+//                 skillName: "Tailwind",
+//                 iconName: "devicon:tailwindcss",
+//             },
+//             {
+//                 skillName: "Bootstrap",
+//                 iconName: "skill-icons:bootstrap",
+//             },
+//         ]
+//     },
+//     {
+//         name: "BackEnd",
+//         data: [
+//             {
+//                 skillName: "Node Js",
+//                 iconName: "skill-icons:nodejs-dark",
+//             },
+//             {
+//                 skillName: "Express Js",
+//                 iconName: "skill-icons:expressjs-light",
+//             },
+//             {
+//                 skillName: "MongoDB",
+//                 iconName: "devicon:mongodb",
+//             },
+//             {
+//                 skillName: "Strapi",
+//                 iconName: "logos:strapi-icon",
+//             }
+//         ]
+//     },
+//     {
+//         name: "Version Control",
+//         data: [
+//             {
+//                 skillName: "GitHub",
+//                 iconName: "fa6-brands:square-github"
+//             }
+//         ]
+//     }
+// ]
 
 export const AboutMeSectionData = [
     {

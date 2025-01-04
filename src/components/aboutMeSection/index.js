@@ -1,16 +1,28 @@
 "use client"
-import { img } from '@/assets'
 import Image from 'next/image'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Fade } from "react-awesome-reveal";
 import Icon from '../icon';
-import { AboutMeSectionData } from '../../../data';
+import { FetchApi } from '@/utils';
+import Link from 'next/link';
 
 // -------------------------------------
 
 const AboutMeSection = () => {
+    const [aboutData, setAboutData] = useState([])
+    const apiFetching = async () => {
+        const getData = await FetchApi({
+            url: "/abouts",
+            method: "get",
+            query: "populate=*"
+        }).then((res) => res?.data)
 
-    const [socialLinkData, setSocialLinkData] = useState(AboutMeSectionData)
+        setAboutData(getData[0])
+    }
+
+    useEffect(() => {
+        apiFetching()
+    }, [])
 
     return (
         <div className='flex items-center justify-center w-full py-20' id='About'>
@@ -23,27 +35,40 @@ const AboutMeSection = () => {
                             </p>
                         </div>
                         <div>
-                            <p className='font-extrabold tracking-wider text-transparent uppercase lg:text-xl font-poppins bg-gradient-to-r from-fuchsia-600 to-pink-600 bg-clip-text'>
-                                Priyanshu Agrawal - MERN Stack Developer
+                            <p className='font-extrabold tracking-wider text-transparent uppercase lg:text-xl font-poppins bg-gradient-to-r from-teal-400 to-gray-300 bg-clip-text'>
+                                {aboutData?.name} - {aboutData?.position}
                             </p>
                         </div>
                         <div>
                             <p className='text-[#b2b3b3] text-justify'>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus eveniet ratione dolorum mollitia magni, dicta expedita rem quisquam saepe quod velit tempora fugiat libero distinctio minus, alias est aspernatur id praesentium nostrum debitis possimus tempore. Tenetur enim a vero nisi optio, neque, quo eligendi corrupti deleniti veniam non tempora eaque.
+                                {aboutData?.desc}
                             </p>
                         </div>
-                        <div className='flex flex-wrap w-full gap-6 p-4'>
+                        <div className='flex flex-wrap w-full gap-6'>
                             {
-                                socialLinkData?.length > 0 && socialLinkData[0].socialLink.map((ele, index) => (
-                                    <Icon key={index} icon={ele.icon} height={30} width={30} className={"text-white"} />
+                                aboutData?.socials?.length > 0 && aboutData?.socials.map((ele, index) => (
+                                    <>
+                                        <Link key={index} href={`/${ele?.link}`}>
+                                            <Icon
+                                                icon={ele.icon}
+                                                height={30}
+                                                width={30}
+                                                className={"text-white"} />
+                                        </Link>
+                                    </>
                                 ))
                             }
                         </div>
                     </Fade>
                 </div>
-                <div className='h-[400px] w-full lg:w-[50%] flex justify-center items-center'>
+                <div className='h-[400px] w-full lg:w-[50%] flex justify-center items-center '>
                     <Fade duration={1000} direction='up' triggerOnce={true}>
-                        <Image src={img} width={600} className='object-cover w-full h-full' height={400} alt='...' />
+                        <Image
+                            src={aboutData?.img}
+                            width={600}
+                            className='object-cover !w-full !h-full rounded-xl'
+                            height={400}
+                            alt='...' />
                     </Fade>
                 </div>
             </div>

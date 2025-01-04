@@ -1,16 +1,16 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import Icon from '../icon';
-import { Navbar_data } from '../../../data';
 import { Fade } from 'react-awesome-reveal';
 import Link from 'next/link';
+import { FetchApi } from '@/utils';
 
 // ------------------------------------
 
 const MobileNavbar = () => {
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [navbar, setNavbar] = useState(Navbar_data)
+    const [navbar, setNavbar] = useState([])
 
     const toggleMenu = () => {
         setIsMenuOpen(prev => !prev);
@@ -32,6 +32,20 @@ const MobileNavbar = () => {
             document.body.classList.remove('overflow-hidden');
         };
     }, [isMenuOpen]);
+
+    const apiFetching = async () => {
+        const getData = await FetchApi({
+            url: "/navbars",
+            method: "get",
+            query: "populate=*"
+        }).then((res) => res?.data)
+
+        setNavbar(getData)
+    }
+
+    useEffect(() => {
+        apiFetching()
+    }, [])
 
     return (
         <>
@@ -57,13 +71,17 @@ const MobileNavbar = () => {
                     <div className='z-10 flex flex-col items-center justify-start py-8 px-4 gap-y-8 lg:hidden fixed top-[64px] w-full bg-black h-full'>
                         <Fade duration={1000} direction='up' triggerOnce={true}>
                             {
-                                navbar.map((ele, index) => {
+                                navbar.length > 0 && navbar.map((ele, index) => {
                                     return (
-                                        <Link key={index} className='w-fit' href={ele.name === "Home" || ele.name === "Portfolio" ? "/" : `/#${ele.name}`} onClick={handleLinkClick}>
+                                        <Link
+                                            key={index}
+                                            className='w-fit'
+                                            href={ele?.title === "Home" || ele?.title === "Portfolio" ? "/" : `/#${ele?.title}`}
+                                            onClick={handleLinkClick}>
                                             <p
                                                 className="text-lg text-[#d9d9d9] font-semibold font-poppins cursor-pointer"
                                             >
-                                                {ele.name}
+                                                {ele.title}
                                             </p>
                                         </Link>
                                     )
@@ -72,7 +90,9 @@ const MobileNavbar = () => {
                         </Fade>
                         <Fade duration={1000} direction='up' triggerOnce={true}>
                             <Link className='w-fit' href={"/contact"}>
-                                <button className='text-[#000] bg-[#b2b3b3] px-6 py-2 rounded-full' onClick={handleLinkClick}>Get In Touch</button>
+                                <button className='text-[#000] bg-[#b2b3b3] px-6 py-2 rounded-full' onClick={handleLinkClick}>
+                                    Get In Touch
+                                </button>
                             </Link>
                         </Fade>
                     </div>

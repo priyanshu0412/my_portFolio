@@ -1,11 +1,11 @@
-import { ProjectImg } from '@/assets'
 import Image from 'next/image'
 import React from 'react'
 import Icon from '../icon'
+import Link from 'next/link'
 
 // ------------------------------
 
-const SpecificProjectPage = () => {
+const SpecificProjectPage = ({ project }) => {
     return (
         <>
             <div className='flex items-center justify-center w-full py-20'>
@@ -13,28 +13,38 @@ const SpecificProjectPage = () => {
                     <div className='flex items-start justify-center gap-x-8'>
                         <div className='flex flex-col gap-y-8 w-[50%] h-full'>
                             <h2 className='text-5xl font-bold text-white'>
-                                Project Name
+                                {project.title}
                             </h2>
-                            <p className='text-[#b2b3b3]'>Category</p>
+                            <p className='text-[#b2b3b3]'>
+                                {project?.category}
+                            </p>
+                            <Link href={`/${project.link}`}>
+                                <p className='text-white underline'>
+                                    {project?.link}
+                                </p>
+                            </Link>
                             <div className='flex flex-col gap-y-8'>
                                 <h2 className='text-xl font-semibold text-white'>
                                     Technology Stack
                                 </h2>
                                 <div className='flex flex-wrap w-full gap-8'>
-                                    <div className='flex items-center justify-center px-4 py-3 rounded-full gap-x-4 backdrop-blur-xl bg-white/20 w-fit'>
-                                        <Icon
-                                            icon={"mdi:react"}
-                                            className={"text-white"}
-                                            height={24}
-                                            width={24} />
-                                        <p className='text-white'>React js</p>
-                                    </div>
+                                    {project.technologies?.map((tech) => (
+                                        <div key={tech.id} className='flex items-center justify-center px-4 py-3 rounded-full gap-x-4 backdrop-blur-xl bg-white/20 w-fit'>
+                                            <Icon
+                                                icon={tech.icon}
+                                                className={'text-white'}
+                                                height={24}
+                                                width={24}
+                                            />
+                                            <p className='text-white'>{tech.title}</p>
+                                        </div>
+                                    ))}
                                 </div>
                             </div>
                         </div>
                         <div className='w-[50%]'>
                             <Image
-                                src={ProjectImg}
+                                src={project?.img}
                                 height={500}
                                 width={500}
                                 alt='...'
@@ -42,7 +52,9 @@ const SpecificProjectPage = () => {
                         </div>
                     </div>
                     <div>
-                        <p className='text-white'>desc</p>
+                        <p className='text-white'>
+                            {project?.short_desc}
+                        </p>
                     </div>
                 </div>
             </div>

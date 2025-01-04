@@ -1,19 +1,33 @@
 "use client"
-import React, { useState } from 'react'
-import { AboutMeSectionData } from '../../../data'
+import React, { useEffect, useState } from 'react'
 import { Icon } from '@iconify/react'
 import Link from 'next/link'
+import { FetchApi } from '@/utils'
 
-// ----------------------------------------------
+// --------------------------------------
 
 const Footer = () => {
+    const [footerData, setFooterData] = useState(null)
 
-    const [socialData, setSocialData] = useState(AboutMeSectionData)
+    const apiFetching = async () => {
+        const getData = await FetchApi({
+            url: "/footers",
+            method: "get",
+            query: "populate=*"
+        }).then((res) => res?.data)
+
+        setFooterData(getData[0])
+    }
+
+    useEffect(() => {
+        apiFetching()
+    }, [])
+
 
     return (
         <>
             <div className='bottom-0 flex items-center justify-center w-full py-20'>
-                <div className=' max-w-[1300px] flex-col px-8 flex justify-center items-center border-red w-full'>
+                <div className='max-w-[1300px] flex-col px-8 flex justify-center items-center border-red w-full'>
                     <div className='flex flex-col w-full lg:flex-row justify-evenly'>
                         <div className='flex flex-col w-full gap-y-4 lg:w-fit'>
                             <div>
@@ -22,55 +36,56 @@ const Footer = () => {
                                 </p>
                             </div>
                             <div>
-                                <p className='font-poppins text-[#b2b3b3]'>Join our newsletter to stay up to date on features and releases.</p>
+                                <p className='font-poppins text-[#b2b3b3]'>
+                                    Join our newsletter to stay up to date on features and releases.
+                                </p>
                             </div>
-                            {/* Newsletter  */}
+                            {/* Newsletter */}
                             <div className='flex flex-col lg:flex-row gap-y-8 lg:gap-y-0 gap-x-4'>
                                 <input type="email" placeholder='Enter Email' className='font-poppins text-white p-4 bg-transparent border-2 rounded-xl w-full lg:w-80 border-[#b2b3b3]' />
                                 <button className='text-[#b2b3b3] border-[1px] hover:text-white hover:border-white border-[#b2b3b3] rounded-full px-4 py-2 font-poppins w-full lg:w-fit '>
                                     Subscribe
                                 </button>
                             </div>
-                            <div className='flex w-full pt-12 gap-x-8 lg:w-fit justify-evenly'>
-                                <Link href={"/privacy-policy"} className="w-fit">
-                                    <p className='text-[#b2b3b3] underline cursor-pointer font-poppins'>Privacy Policy</p>
-                                </Link>
-                                <Link href={"/terms-of-service"} className="w-fit">
-                                    <p className='text-[#b2b3b3] underline cursor-pointer font-poppins'>Terms of Service</p>
-                                </Link>
-                            </div>
                         </div>
                         <div className='flex justify-around w-full pt-16 lg:pt-0 lg:justify-evenly'>
                             <div className='flex flex-col w-fit gap-y-8 [&>p]:font-poppins'>
-                                <p className='font-extrabold text-white'>Pages</p>
-                                <Link href={"/"}>
-                                    <p className='text-[#b2b3b3]'>Home</p>
-                                </Link>
-                                <Link href={"/contact"}>
-                                    <p className='text-[#b2b3b3]'>Contact</p>
-                                </Link>
+                                <p className='font-extrabold text-white'>
+                                    Pages
+                                </p>
+                                {footerData?.pages?.map((page, index) => (
+                                    <Link key={index} href={page.url}>
+                                        <p className='text-[#b2b3b3]'>
+                                            {page.name}
+                                        </p>
+                                    </Link>
+                                ))}
                             </div>
-                            <div className='flex flex-col w-fit gap-y-8 '>
+                            <div className='flex flex-col w-fit gap-y-8'>
                                 <div>
-                                    <p className='font-extrabold text-white font-poppins'>Follow Me </p>
+                                    <p className='font-extrabold text-white font-poppins'>
+                                        Follow Me on
+                                    </p>
                                 </div>
                                 <div className='flex flex-col justify-center gap-y-8'>
-                                    {
-                                        socialData.length > 0 && socialData[0].socialLink.map((ele, index) => {
-                                            return (
-                                                <div key={index} className='flex items-center cursor-pointer gap-x-4'>
-                                                    <Icon icon={ele.icon} height={20} width={20} className='text-white' />
-                                                    <p className='text-[#b2b3b3]'>{ele.name}</p>
-                                                </div>
-                                            )
-                                        })
-                                    }
+                                    {footerData?.socials?.map((social, index) => (
+                                        <div key={index} className='flex items-center cursor-pointer gap-x-4'>
+                                            <Link href={`${social.link}`} target="_blank" className="flex items-center gap-x-4">
+                                                <Icon icon={social.icon} height={20} width={20} className='text-white' />
+                                                <p className='text-[#b2b3b3]'>
+                                                    {social.name}
+                                                </p>
+                                            </Link>
+                                        </div>
+                                    ))}
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div className='pt-20'>
-                        <p className='text-[#b2b3b3] font-poppins'>&copy; 2024 Priyanshu All Right Reserved </p>
+                        <p className='text-[#b2b3b3] font-poppins'>
+                            &copy; 2024 Priyanshu All Right Reserved
+                        </p>
                     </div>
                 </div>
             </div>

@@ -1,30 +1,43 @@
-import React from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { ProjectData } from '../../../../data';
-import NotFound from '@/app/not-found';
-import { SpecificProjectPage } from '@/components';
+"use client";
+import React, { useEffect, useState, useCallback } from "react";
+import NotFound from "@/app/not-found";
+import { SpecificProjectPage } from "@/components";
+import { FetchApi } from "@/utils";
 
 const ProjectPage = ({ params }) => {
     const { slug } = params;
+    const [project, setProject] = useState(null);
 
-    const project = ProjectData.find((proj) => proj.url === `/${slug}`);
+    const fetchProject = useCallback(async () => {
+        try {
+            const response = await FetchApi({
+                url: "/projects",
+                method: "get",
+                query: "populate=*",
+            });
+            const projects = response?.data || [];
 
-    console.log(slug, "slug")
+            const foundProject = projects.find(
+                (proj) => proj.slugURL === `/${slug}`
+            );
+            setProject(foundProject || null);
+        } catch (error) {
+            console.error("Error fetching project:", error);
+            setProject(null);
+        }
+    }, [slug]);
+
+    useEffect(() => {
+        fetchProject();
+    }, [slug, fetchProject]);
 
     if (!project) {
-        return <NotFound />
+        return <NotFound />;
     }
 
     return (
         <>
-            {/* <h1 className="mb-4 text-3xl font-bold">{project.projectTitle}</h1>
-            <Image src={project.projectImg} alt={project.projectTitle} width={600} height={400} />
-            <p className="my-4">{project.projectDesc}</p>
-            <Link href={project.projectLink} className="text-blue-500 underline" target="_blank" rel="noopener noreferrer">
-                View Actual Project
-            </Link> */}
-            <SpecificProjectPage />
+            <SpecificProjectPage project={project} />
         </>
     );
 };
