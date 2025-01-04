@@ -1,20 +1,31 @@
 "use client"
-import React, { Fragment, useState } from 'react'
-import { Navbar_data } from '../../../data'
+import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import MobileNavbar from '../mobileNavbar'
-import Icon from '../icon'
+import { FetchApi } from '@/utils'
 
 // ---------------------------------
 
 const Navbar = () => {
 
-    const [navbar, setNavbar] = useState(Navbar_data)
-    const [isHovered, setIsHovered] = useState(false)
+    const [navbar, setNavbar] = useState([])
+
+    const apiFetching = async () => {
+        const getData = await FetchApi({
+            url: "/navbars",
+            method: "get",
+            query: "populate=*"
+        }).then((res) => res?.data)
+
+        setNavbar(getData)
+    }
+
+    useEffect(() => {
+        apiFetching()
+    }, [])
 
     return (
         <>
-
             <div className='items-center justify-between hidden w-full h-20 px-16 lg:flex'>
                 <div>
                     <Link className='w-fit' href={"/"}>
@@ -25,12 +36,15 @@ const Navbar = () => {
                 </div>
                 <div className='flex items-center justify-center gap-8'>
                     {
-                        navbar.map((ele, index) => {
+                        navbar.length > 0 && navbar.map((ele, index) => {
                             return (
-                                <Link href={ele.name === "Home" ? "/" : `/#${ele.name}`} key={index} className='w-fit'>
+                                <Link
+                                    href={ele?.title === "Home" ? "/" : `/#${ele?.title}`}
+                                    key={index}
+                                    className='w-fit'>
                                     <p
                                         className="text-[#d9d9d9] hover:text-white font-normal font-poppins cursor-pointer">
-                                        {ele.name}
+                                        {ele?.title}
                                     </p>
                                 </Link>
                             )
@@ -46,6 +60,7 @@ const Navbar = () => {
                 </div >
             </div >
 
+            {/* Mobile Navbar */}
             <MobileNavbar />
         </>
     )
