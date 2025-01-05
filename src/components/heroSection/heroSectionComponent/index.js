@@ -39,7 +39,9 @@ const HeroSectionComponents = ({ data }) => {
                                 Download Resume
                             </a>
 
-                            <Link className='w-fit' href={"/contact"}>
+                            <Link
+                                className='w-fit'
+                                href={"/contact"}>
                                 <button className='border-2 hover:text-white hover:border-white border-[#b2b3b3] text-[#b2b3b3]  py-3 px-4 lg:px-6 lg:py-3 rounded-full'>
                                     Contact
                                 </button>
