@@ -2,27 +2,10 @@
 import React, { useEffect, useState } from 'react'
 import { Fade } from 'react-awesome-reveal';
 import ProjectCard from '../projectSection/projectCard';
-import { FetchApi } from '@/utils';
 
 // ---------------------------------
 
-const AllProjectPageComp = () => {
-
-    const [data, setData] = useState([])
-
-    const apiFetching = async () => {
-        const getData = await FetchApi({
-            url: "/projects",
-            method: "get",
-            query: "populate=*"
-        }).then((res) => res?.data)
-
-        setData(getData)
-    }
-
-    useEffect(() => {
-        apiFetching()
-    }, [])
+const AllProjectPageComp = ({ data }) => {
 
     return (
         <>
