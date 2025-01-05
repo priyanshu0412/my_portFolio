@@ -3,14 +3,12 @@ import React, { useState, useEffect } from 'react';
 import Icon from '../icon';
 import { Fade } from 'react-awesome-reveal';
 import Link from 'next/link';
-import { FetchApi } from '@/utils';
 
 // ------------------------------------
 
-const MobileNavbar = () => {
+const MobileNavbar = ({ navbar }) => {
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [navbar, setNavbar] = useState([])
 
     const toggleMenu = () => {
         setIsMenuOpen(prev => !prev);
@@ -32,20 +30,6 @@ const MobileNavbar = () => {
             document.body.classList.remove('overflow-hidden');
         };
     }, [isMenuOpen]);
-
-    const apiFetching = async () => {
-        const getData = await FetchApi({
-            url: "/navbars",
-            method: "get",
-            query: "populate=*"
-        }).then((res) => res?.data)
-
-        setNavbar(getData)
-    }
-
-    useEffect(() => {
-        apiFetching()
-    }, [])
 
     return (
         <>
@@ -71,7 +55,7 @@ const MobileNavbar = () => {
                     <div className='z-10 flex flex-col items-center justify-start py-8 px-4 gap-y-8 lg:hidden fixed top-[64px] w-full bg-black h-full'>
                         <Fade duration={1000} direction='up' triggerOnce={true}>
                             {
-                                navbar.length > 0 && navbar.map((ele, index) => {
+                                navbar?.length > 0 && navbar.map((ele, index) => {
                                     return (
                                         <Link
                                             key={index}
