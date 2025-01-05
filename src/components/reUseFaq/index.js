@@ -23,8 +23,6 @@ const ReUseFaq = () => {
         apiFetching()
     }, [])
 
-    console.log("faqData", faqData)
-
     return (
         <div className='flex items-center justify-center w-full' id='Faqs'>
             <div className='max-w-[1000px] w-full py-10 flex flex-col gap-y-20 justify-center items-center px-8 2xl:px-0'>

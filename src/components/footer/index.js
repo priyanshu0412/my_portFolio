@@ -37,15 +37,8 @@ const Footer = () => {
                             </div>
                             <div>
                                 <p className='font-poppins text-[#b2b3b3]'>
-                                    Join our newsletter to stay up to date on features and releases.
+                                    Turning ideas into responsive and dynamic web solutions.
                                 </p>
-                            </div>
-                            {/* Newsletter */}
-                            <div className='flex flex-col lg:flex-row gap-y-8 lg:gap-y-0 gap-x-4'>
-                                <input type="email" placeholder='Enter Email' className='font-poppins text-white p-4 bg-transparent border-2 rounded-xl w-full lg:w-80 border-[#b2b3b3]' />
-                                <button className='text-[#b2b3b3] border-[1px] hover:text-white hover:border-white border-[#b2b3b3] rounded-full px-4 py-2 font-poppins w-full lg:w-fit '>
-                                    Subscribe
-                                </button>
                             </div>
                         </div>
                         <div className='flex justify-around w-full pt-16 lg:pt-0 lg:justify-evenly'>
